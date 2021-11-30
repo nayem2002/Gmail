@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .headerstyle {
+    @apply flex items-center md:space-x-3 text-xs md:text-base lg:text-xl w-14 md:w-36 lg:w-52 h-16 p-3 cursor-pointer hover:border-b-2 hover:bg-gray-100;
+  }
+  .icon-style {
+    @apply cursor-pointer text-xs md:text-xl lg:text-2xl hover:scale-110 transform transition-all duration-100;
+  }
+  .btn {
+    @apply flex items-center border-2 px-1 md:px-5 py-2 hover:bg-gray-100 transition-all duration-100;
+  }
+  .icon {
+    @apply cursor-pointer text-xs md:text-xl;
+  }
+}
