@@ -3,7 +3,7 @@ import { BiWindowOpen } from 'react-icons/bi';
 import { BsFillForwardFill } from 'react-icons/bs';
 import { TiArrowBack } from 'react-icons/ti';
 import { useSelector } from 'react-redux';
-import Time from 'react-time-format';
+import Moment from 'react-moment';
 
 const Mail = () => {
   const { mail } = useSelector((state) => state.mail);
@@ -25,17 +25,15 @@ const Mail = () => {
               <img
                 className="h-8 w-8 md:h-12 md:w-12 rounded-full object-cover"
                 src="https://img.favpng.com/25/13/19/samsung-galaxy-a8-a8-user-login-telephone-avatar-png-favpng-dqKEPfX7hPbc6SMVUCteANKwj.jpg"
-                alt="image"
+                alt=""
               />
               <p className="truncate text-xs md:text-base">{mail.email}</p>
             </div>
 
-            <div className="hidden md:block md:flex items-center space-x-2 lg:space-x-8 text-xl ">
+            <div className="hidden md:inline-flex items-center space-x-2 lg:space-x-8 text-xl ">
               <p className="text-sm">
-                <Time
-                  value={mail.timestamp?.seconds * 1000}
-                  format="YYYY-MM-DD hh:mm:ss"
-                />
+                <Moment fromNow>{mail?.timestamp?.toDate()}</Moment>
+               
               </p>
               <AiOutlineStar className="icon-style" />
               <TiArrowBack className="icon-style" />

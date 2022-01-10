@@ -1,4 +1,4 @@
-import { getProviders, signIn } from 'next-auth/react';
+import { getProviders, getSession, signIn } from 'next-auth/react';
 const login = ({ providers }) => {
   return (
     <div className="flex items-center justify-center w-full h-screen">
@@ -25,9 +25,10 @@ const login = ({ providers }) => {
 
 export default login;
 
-export async function getServerSideProps() {
+export async function getServerSideProps(contex) {
   const providers = await getProviders();
+  const session = await getSession(contex);
   return {
-    props: { providers },
+    props: { providers, session },
   };
 }

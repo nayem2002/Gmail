@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { collection, onSnapshot, query } from '@firebase/firestore';
 import { db } from '../firebase';
-import Time from 'react-time-format';
 import { seeMail } from '../feature/mailSlice';
 import { useDispatch } from 'react-redux';
+import Moment from 'react-moment';
 
 const MailRowList = () => {
   const [emailsRow, setEmailRow] = useState([]);
@@ -50,7 +50,7 @@ const MailRowList = () => {
               </p>
             </div>
             <p className="text-right">
-              <Time value={mail.timestamp?.seconds * 1000} format="hh:mm:ss" />
+              <Moment fromNow>{mail?.timestamp?.toDate()}</Moment>
             </p>
           </div>
         ))}

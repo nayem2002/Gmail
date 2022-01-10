@@ -7,22 +7,21 @@ import Sidebar from '../components/Sidebar';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 export default function Home() {
   const { data: session } = useSession();
   const route = useRouter();
-  // useEffect(() => {
-  //   if (session === null || session === undefined) {
-  //     route.push('/login');
-  //   } else {
-  //     route.push('/');
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    if (session === null || session === undefined) {
+      route.push('/login');
+    } else {
+      route.push('/');
+    }
+  }, [session]);
   return (
     <div className="">
       <Head>
-        <title>Gmail</title>
+        <title>Gmail Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

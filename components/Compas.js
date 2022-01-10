@@ -11,6 +11,7 @@ const Compas = () => {
   const {
     register,
     handleSubmit,
+    reset,
 
     formState: { errors },
   } = useForm();
@@ -23,6 +24,7 @@ const Compas = () => {
         discription,
         timestamp: serverTimestamp(),
       });
+      reset()
       alert('Data submited sucessfull');
     } catch (err) {
       alert(err);

@@ -1,9 +1,4 @@
-import {
-  AiFillDelete,
-  AiOutlineFieldTime,
-  AiOutlineMore,
-  AiTwotoneMail,
-} from 'react-icons/ai';
+import { AiFillDelete, AiOutlineMore, AiTwotoneMail } from 'react-icons/ai';
 import { MdAttachEmail, MdReport, MdTimerOff } from 'react-icons/md';
 import { BiArrowBack, BiTime } from 'react-icons/bi';
 import { MdLabelImportant } from 'react-icons/md';
@@ -32,7 +27,7 @@ const MailMiniTopBar = () => {
           <MdLabelImportant className="icon-style" />
           <AiOutlineMore className="icon-style" />
         </div>
-        <div className="hidden md:block md:flex items-center md:space-x-3 lg:space-x-6">
+        <div className="hidden md:inline-flex items-center md:space-x-3 lg:space-x-6">
           <p className="text-xs md:text-sm lg:text-base">1-20 of 221</p>
           <IoIosArrowBack className="icon" />
           <IoIosArrowForward className="icon" />
